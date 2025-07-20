@@ -9,14 +9,15 @@ function Rowpost(props) {
   const [id, setId] = useState('');
   
   
-  useEffect(() => {
-    axios
-      .get(props.url)
-      .then((response) => {
-        console.log(response.data);
-        setMovies(response.data.results);
-      });
-  }, []);
+useEffect(() => {
+  axios
+    .get(props.url)
+    .then((response) => {
+      console.log(response.data);
+      setMovies(response.data.results);
+    });
+}, [props.url]);
+
   const opts = {
     height: "390",
     width: "100%",
